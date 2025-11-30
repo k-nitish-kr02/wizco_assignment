@@ -154,35 +154,5 @@ Weekly retention tracking for 12 weeks post-signup
 
 **Output**: `outputs/tables/retention_metrics.csv`, `outputs/figures/retention_curve.png`
 
-## SQL Queries
-
-All SQL queries are PostgreSQL-compatible and can be run directly on a database:
-
-```sql
--- Example: Run funnel analysis
-psql -d your_database -f sql/01_funnel_analysis.sql
-```
-
-Or use Python with SQLAlchemy:
-
-```python
-from sqlalchemy import create_engine
-import pandas as pd
-
-engine = create_engine('postgresql://user:password@localhost/dbname')
-query = open('sql/01_funnel_analysis.sql').read()
-result = pd.read_sql(query, engine)
-```
-
-## Deliverables
-
-### Report
-- **Location**: `reports/User_Conversion_Analysis_Report.md`
-- **Contents**: 
-  - Funnel analysis with conversion rates
-  - Segment comparison and insights
-  - Behavioral signals and high-intent actions
-  - Actionable recommendations
-
 
 
