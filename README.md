@@ -176,7 +176,7 @@ result = pd.read_sql(query, engine)
 
 ## Deliverables
 
-### 1. Report
+### Report
 - **Location**: `reports/User_Conversion_Analysis_Report.md`
 - **Contents**: 
   - Funnel analysis with conversion rates
@@ -184,74 +184,5 @@ result = pd.read_sql(query, engine)
   - Behavioral signals and high-intent actions
   - Actionable recommendations
 
-### 2. SQL Queries
-- **Location**: `sql/` directory
-- **Files**: All queries organized by analysis type
 
-### 3. Analysis Notebook
-- **Location**: `notebooks/analysis_notebook.ipynb`
-- **Contents**: Complete analysis with visualizations
 
-### 4. Outputs
-- **Tables**: `outputs/tables/*.csv`
-- **Visualizations**: `outputs/figures/*.png`
-
-## Requirements
-
-- **Python**: 3.8 or higher
-- **PostgreSQL**: 12+ (optional, for SQL queries)
-- **Packages**: See `requirements.txt`
-
-## Troubleshooting
-
-### Import Errors
-
-If you get module import errors:
-
-```bash
-# Make sure you're in the project root
-cd user-conversion-analysis
-
-# Add project to PYTHONPATH
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-
-# Or run from scripts directory
-cd scripts && python main.py
-```
-
-### Memory Issues
-
-For large datasets:
-
-```python
-# Load data in chunks
-users = pd.read_csv('data/raw/users.csv', chunksize=10000)
-
-# Or use Dask for larger-than-memory datasets
-import dask.dataframe as dd
-users = dd.read_csv('data/raw/users.csv')
-```
-
-### Missing Data Files
-
-Ensure all three CSV files are in `data/raw/`:
-- users.csv
-- events.csv
-- payments.csv
-
-## Key Assumptions
-
-1. All timestamps are in consistent timezone (UTC assumed)
-2. "Returned within 7 days" = any event on days 1-7 after signup
-3. Events on signup day (day 0) count for engagement but not "return"
-4. All event types count equally
-5. Conversion window focus: 30 days
-
-## Contact
-
-For questions or issues with this analysis, please contact the analytics team.
-
----
-
-**Last Updated**: November 2024  
-**Version**: 1.0
