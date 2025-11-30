@@ -1,0 +1,36 @@
+# Data files (don't commit sensitive data)
+data/raw/*.csv
+data/processed/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs (optional - you may want to commit these)
+# outputs/figures/*.png
+# outputs/tables/*.csv
+
+# Secrets
+config/database.yaml
+*.env
+.env.local
